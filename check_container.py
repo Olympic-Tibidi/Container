@@ -230,7 +230,7 @@ def check_container_no(container):
     if check==int(container[-1]):
         return('Container Number Legitimate')
     else:
-        return('Container Number Is Wrong')
+        return('This is not a legitimate container number!')
 
 
 
