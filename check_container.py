@@ -103,8 +103,8 @@ def list_files_in_subfolder(bucket_name, folder_name):
 
 
 
-owner_codes=gcp_download(target_bucket,rf"owner_codes.dat")
-owner_codes= pickle.load(open(owner_codes, "rb"))
+owner_codes=gcp_download(target_bucket,rf"container.json")
+owner_codes= json.loads(owner_codes)
 
 #letter_dict= pickle.load(open("bic_letters.dat", "rb"))
 
