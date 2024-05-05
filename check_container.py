@@ -213,7 +213,22 @@ def guess_missing_number(container):
         
     return target,container.replace('?',str(target))
 
-
+def check_container_no(container):
+    liste=[i for i in container]
+    a=0
+    b=0
+    if len(container)<11 or '?' in container:
+        return('Container Number Missing Digit ')
+    for i,j in enumerate([k for k in container][:4]):
+        a+=2**i*letter_dict[j]
+    for i,j in enumerate([k for k in container][4:-1]):
+        z=2**(i+4)
+        b+=(int(z)*int(j))
+    check=(a+b)-int((a+b)/11)*11 
+    if check==int(container[-1]):
+        return True
+    else:
+        return False
 st.title('Container Number Validation')
 container = st.text_input('Enter the container number:', '')
 if st.button('Check Validity'):
