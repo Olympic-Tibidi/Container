@@ -228,13 +228,10 @@ def check_container_no(container):
         b+=(int(z)*int(j))
     check=(a+b)-int((a+b)/11)*11 
     if check==int(container[-1]):
-        return True
+        return('Container Number Legitimate')
     else:
-        return False
+        return('Container Number Is Wrong')
 st.title('Container Number Validation')
 container = st.text_input('Enter the container number:', '')
 if st.button('Check Validity'):
-    if check_container_no(container):
-        st.success('Container Number is Legitimate')
-    else:
-        st.error('Container Number is Wrong')
+    st.write(guess_missing_number(container))
