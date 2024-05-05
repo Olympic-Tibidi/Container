@@ -103,10 +103,12 @@ def list_files_in_subfolder(bucket_name, folder_name):
 
 
 
-owner_codes=gcp_download(target_bucket,rf"container.json")
-owner_codes= json.loads(owner_codes)
+container_data=gcp_download(target_bucket,rf"container.json")
+container_data= json.loads(container_data)
+owner_codes=container_data["owner_codes"]
 
-#letter_dict= pickle.load(open("bic_letters.dat", "rb"))
+letter_dict=  container_data["letter_dict"]
+
 
 def guess_missing_number(container):
     
