@@ -9,8 +9,7 @@ import pickle
 st.set_page_config(layout="wide")
 target_bucket="new_suzano_spare"
 utc_difference=7
-owner_codes= pickle.load(open("owner_codes.dat", "rb"))
-letter_dict= pickle.load(open("bic_letters.dat", "rb"))
+
 
 
 
@@ -104,9 +103,10 @@ def list_files_in_subfolder(bucket_name, folder_name):
 
 
 
-bill_data=gcp_download(target_bucket,rf"terminal_bill_of_ladings.json")
-admin_bill_of_ladings=json.loads(bill_data)
+owner_codes=gcp_download(target_bucket,rf"owner_codes.dat")
+owner_codes= pickle.load(open(owner_codes, "rb"))
 
+#letter_dict= pickle.load(open("bic_letters.dat", "rb"))
 
 def guess_missing_number(container):
     
