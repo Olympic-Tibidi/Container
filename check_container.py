@@ -245,6 +245,6 @@ def check_container_no(container):
 
 st.subheader("Afsin's Container Number Validation - Missing Digit Algorithm")
 container = st.text_input('Enter a 12 digit container number:', '')
-st.write("If it is missing a digit, replace the digit with "?")
+st.write("If it is missing a digit, replace the digit with '?'")
 if st.button('Check Validity'):
     st.write(guess_missing_number(container))
